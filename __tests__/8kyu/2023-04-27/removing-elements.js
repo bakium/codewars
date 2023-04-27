@@ -11,7 +11,7 @@ None of the arrays will be empty, so you don't have to worry about that!
 
 
 function removeEveryOther(arr) {
-    //your code here
+    return arr.filter((_, index) => !(index % 2))
 }
 
 const chai = require("chai");
