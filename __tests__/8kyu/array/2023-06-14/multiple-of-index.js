@@ -13,7 +13,7 @@ Some cases:
  */
 
 function multipleOfIndex(array) {
-    // good luck
+    return array.filter((element, index) => element === index || element % index === 0)
 }
 
 const chai = require("chai");
