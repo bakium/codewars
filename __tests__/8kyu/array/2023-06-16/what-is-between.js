@@ -9,8 +9,15 @@ b = 4
 */
 
 function between(a, b) {
-    // your code here
+    let result = []
+    while (a <= b) {
+        result.push(a)
+        a++
+    }
+    return result
 }
+
+const { assert } = require('chai')
 
 describe("Basic tests", () => {
     it("between(1, 4)", () => assert.deepStrictEqual(between(1, 4), [1, 2, 3, 4]));
