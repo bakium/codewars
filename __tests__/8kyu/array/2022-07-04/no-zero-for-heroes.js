@@ -13,10 +13,12 @@ Zero alone is fine, don't worry about it. Poor guy anyway
  */
 
 function noBoringZeros(n) {
-    // your code
-}
 
-const Test = require('@codewars/test-compat');
+    while (n % 10 === 0 && n !== 0) {
+        n = n / 10
+    }
+    return n
+}
 
 const chai = require("chai");
 const assert = chai.assert;
