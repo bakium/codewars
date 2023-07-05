@@ -5,8 +5,14 @@ Note: input will never be an empty string
 
 function fakeBin(x) {
 
-}
+    let result = ''
+    for (let i = 0; i < x.length; i++) {
+        result += x[i] < 5 ? '0' : '1'
 
+    }
+
+    return result
+}
 const chai = require("chai");
 const assert = chai.assert;
 chai.config.truncateThreshold = 0;
