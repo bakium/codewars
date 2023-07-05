@@ -5,13 +5,15 @@ Note: input will never be an empty string
 
 function fakeBin(x) {
 
-    let result = ''
-    for (let i = 0; i < x.length; i++) {
-        result += x[i] < 5 ? '0' : '1'
+    // let result = ''
+    // for (let i = 0; i < x.length; i++) {
+    //     result += x[i] < 5 ? '0' : '1'
 
-    }
+    // }
 
-    return result
+    // return result
+
+    return x.split('').map(s => s < 5 ? 0 : 1).join('')
 }
 const chai = require("chai");
 const assert = chai.assert;
