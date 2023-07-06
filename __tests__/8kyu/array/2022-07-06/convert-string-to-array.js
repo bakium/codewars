@@ -8,7 +8,7 @@ Examples (Input ==> Output):
  */
 
 function stringToArray(string) {
-    // code code code
+    return string.split(' ')
 }
 
 const chai = require("chai");
