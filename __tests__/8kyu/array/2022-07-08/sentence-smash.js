@@ -8,7 +8,7 @@ Example
  */
 
 function smash(words) {
-    return ""
+    return words.join(" ")
 }
 
 const chai = require("chai");
