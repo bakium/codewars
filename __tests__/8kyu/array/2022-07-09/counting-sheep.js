@@ -17,7 +17,7 @@ Hint: Don't forget to check for bad values like null/undefined
  */
 
 function countSheeps(arrayOfSheep) {
-    // TODO May the force be with you
+    return arrayOfSheep.reduce((acc, element) => acc + (element === true ? element : null), 0)
 }
 
 describe("Tests", () => {
