@@ -21,13 +21,11 @@ Notes:
  */
 
 function points(games) {
-    return games.reduce((acc, current) => {
+    return games.reduce((total, current) => {
 
         let x = current[0]
         let y = current[2]
-        if (x > y) return acc += 3
-        else if (x < y) return acc += 0
-        else return acc += 1
+        return total += x > y ? 3 : x === y ? 1 : 0
     }, 0)
 }
 
