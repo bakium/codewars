@@ -4,6 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "devDependencies": {
+    "@codewars/test-compat": "^1.1.0",
     "chai": "^4.3.7",
     "jest-cli": "^29.5.0",
     "mocha": "^10.2.0"
