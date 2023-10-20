@@ -5,7 +5,9 @@ For example, for [1, 2, 2] it should return 9 because 12+22+22=91^2 + 2^2 + 2^2 
 */
 
 function squareSum(numbers) {
-
+    let result = 0
+    numbers.forEach(num => result += Math.pow(num, 2))
+    return result
 }
 
 const chai = require("chai");
