@@ -11,7 +11,7 @@ Note: String will have at least one element; words will always be separated by a
  */
 
 function addLength(str) {
-    //start-here
+    return str.split(" ").map(word => `${word} ${word.length}`)
 }
 
 const { assert } = require('chai');
