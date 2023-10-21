@@ -7,7 +7,7 @@ Note: if there is nothing to sum, the sum is default to 0.
 */
 
 function positiveSum(arr) {
-
+  return arr.reduce((acc, item) => item > 0 ? acc + item : acc, 0)
 }
 
 const { assert } = require("chai")
