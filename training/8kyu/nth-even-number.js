@@ -13,7 +13,7 @@ The input will not be 0.
  */
 
 function nthEven(n) {
-    // your code here
+    return (n * 2) - 2
 }
 
 const chai = require('chai');
