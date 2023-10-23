@@ -5,7 +5,8 @@ Input :: "a"
 Ouput :: "Position of alphabet: */
 
 function position(letter) {
-
+    const alphabetPosition = letter.toLowerCase().charCodeAt(0) - 96
+    return `Position of alphabet: ${alphabetPosition}`
 }
 
 const chai = require("chai");
