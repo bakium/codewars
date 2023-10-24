@@ -4,9 +4,10 @@ Note: Empty arrays should return 0.
 */
 
 function findAverage(array) {
-    // your code here
-    return 0;
+    if (array.length === 0) return 0
+    return array.reduce((acc, el) => acc + el, 0) / array.length
 }
+
 const chai = require("chai");
 const assert = chai.assert;
 chai.config.truncateThreshold = 0;
