@@ -9,7 +9,12 @@ b = 4
 */
 
 function between(a, b) {
-    // your code here
+    const res = []
+    while (a <= b) {
+        res.push(a)
+        a++
+    }
+    return res
 }
 
 const chai = require("chai");
