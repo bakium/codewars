@@ -4,7 +4,14 @@ For example, if the parameters passed are (2, 6), the function should return [2,
  */
 
 function findMultiples(integer, limit) {
-    //your code here
+    const results = []
+    const multiple = integer
+
+    while (integer <= limit) {
+        if (integer % multiple === 0) results.push(integer)
+        integer += multiple
+    }
+    return results
 }
 
 const { assert } = require('chai');
