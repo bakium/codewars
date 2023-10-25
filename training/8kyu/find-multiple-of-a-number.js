@@ -4,12 +4,9 @@ For example, if the parameters passed are (2, 6), the function should return [2,
  */
 
 function findMultiples(integer, limit) {
-    const results = []
-    const multiple = integer
-
-    while (integer <= limit) {
-        if (integer % multiple === 0) results.push(integer)
-        integer += multiple
+    let results = []
+    for (let i = integer; integer <= limit; integer += i) {
+        if (integer % i === 0) results.push(integer)
     }
     return results
 }
