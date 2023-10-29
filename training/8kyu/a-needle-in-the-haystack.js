@@ -14,7 +14,8 @@ Note: In COBOL, it should return "found the needle at position 6"
  */
 
 function findNeedle(haystack) {
-    // your code here
+    const position = haystack.indexOf("needle")
+    return `found the needle at position ${position}`
 }
 
 const Test = require('@codewars/test-compat');
