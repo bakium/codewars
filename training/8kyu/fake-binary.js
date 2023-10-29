@@ -4,7 +4,7 @@ Note: input will never be an empty string
  */
 
 function fakeBin(x) {
-    return [...x].map(n => n < 5 ? 0 : 1).join("")
+    return [...x].reduce((acc, current) => current < 5 ? acc + "0" : acc + "1", [])
 }
 
 const chai = require("chai");
