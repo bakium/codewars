@@ -17,7 +17,7 @@ Hint: Don't forget to check for bad values like null/undefined
  */
 
 function countSheeps(arrayOfSheep) {
-  // TODO May the force be with you
+  return arrayOfSheep.reduce((acc, sheep) => sheep === true ? acc + 1 : acc, 0)
 }
 
 const chai = require("chai");
