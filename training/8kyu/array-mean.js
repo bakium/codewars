@@ -6,7 +6,7 @@ The array will never be empty.
  */
 
 function getAverage(marks) {
-    //TODO : calculate the downward rounded average of the marks array
+    return Math.floor(marks.reduce((acc, mark) => acc + mark, 0) / marks.length)
 }
 
 const chai = require('chai')
