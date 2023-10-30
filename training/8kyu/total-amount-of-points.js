@@ -25,12 +25,8 @@ function points(games) {
         const x = element[0]
         const y = element[2]
 
-        let points = 0
-        if (x > y) points = 3
-        if (x < y) points = 0
-        if (x === y) points = 1
+        const points = x > y ? 3 : (x === y) ? 1 : 0
         return acc + points
-
     }, 0)
 }
 
