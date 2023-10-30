@@ -9,7 +9,8 @@ Example(Input => Output):
  */
 
 function digitize(n) {
-    //code here
+    // return String(n).split("").reverse().map(Number)
+    return [...String(n)].reverse().map(Number)
 }
 
 const chai = require("chai");
