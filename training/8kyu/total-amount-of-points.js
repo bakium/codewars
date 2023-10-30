@@ -21,7 +21,17 @@ Notes:
  */
 
 function points(games) {
-    return 0
+    return games.reduce((acc, element) => {
+        const x = element[0]
+        const y = element[2]
+
+        let points = 0
+        if (x > y) points = 3
+        if (x < y) points = 0
+        if (x === y) points = 1
+        return acc + points
+
+    }, 0)
 }
 
 const chai = require("chai");
