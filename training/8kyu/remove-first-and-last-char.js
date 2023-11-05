@@ -4,7 +4,7 @@ It's pretty straightforward. Your goal is to create a function that removes the 
  */
 
 function removeChar(str) {
-    //You got this!
+    return str.slice(1, -1)
 };
 
 const chai = require("chai");
