@@ -19,7 +19,12 @@ Examples
 
 
 function array(string) {
-    // TODO
+    // Too long solution
+    // const splitedString = string.split(",")
+    // return splitedString.length >= 3
+    //     ? string.split(",").slice(1, -1).join(" ")
+    //     : null
+    return string.split(",").slice(1, -1).join(" ") || null
 }
 
 const { assert } = require('chai');
