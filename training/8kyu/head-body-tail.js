@@ -8,7 +8,10 @@ Simples!
  */
 
 function fixTheMeerkat(arr) {
-    //your code here 
+    // longer solution
+    // return [...arr.slice(-1), ...arr.slice(1, -1), arr[0]]
+    return arr.reverse()
+
 }
 
 const chai = require("chai");
