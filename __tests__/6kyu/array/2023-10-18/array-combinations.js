@@ -16,7 +16,13 @@ Sum of array singles
  */
 
 function solve(arr) {
-    return 0;
+    return arr
+        // .map(innerArr => [...new Set(innerArr)])
+        // .reduce((acc, innerArray) => acc * innerArray.length, 1)
+
+        // no need to reconvert the set to an array to get the size
+        // we can just use Set().size
+        .reduce((acc, innerArray) => acc * new Set(innerArray).size, 1)
 };
 
 const { assert } = require('chai')
