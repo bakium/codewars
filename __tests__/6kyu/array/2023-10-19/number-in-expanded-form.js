@@ -12,7 +12,11 @@ If you liked this kata, check out part 2!!
  */
 
 function expandedForm(num) {
-    // Your code here
+    return [...num.toString()].reduce((acc, current, index, array) => {
+        return current !== "0"
+            ? [...acc, current + "0".repeat(array.length - 1 - index)]
+            : acc
+    }, []).join(" + ")
 }
 
 const { assert } = require('chai');
