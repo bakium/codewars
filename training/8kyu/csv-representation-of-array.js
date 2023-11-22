@@ -17,7 +17,15 @@ output:
 Array's length > 2. */
 
 function toCsvText(array) {
-    // good luck
+    // join join RECURSIVELY with COMMAS
+    // so join(',') do the job and
+    // return array.join('|') // return "0,1,2,3,45|10,11,12,13,14|20,21,22,23,24|30,31,32,33,34"
+    return array.join('\n')
+
+    // non optimized solution
+    // return array
+    //     .map(innerArr => innerArr.join(','))
+    //     .join('\n')
 }
 
 const { assert } = require('chai');
