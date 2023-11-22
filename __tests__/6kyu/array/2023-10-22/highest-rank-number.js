@@ -10,15 +10,12 @@ Examples
  */
 
 function highestRank(arr) {
-    const frequences = arr.reduce((acc, el) => (acc[el] = 1 + (acc[el] | 0), acc), {})
+    const getNumFrequence = x => arr.filter(n => n === x).length
 
-    const max = Math.max(...Object.values(frequences))
+    const sortedByFreq = arr
+        .sort((a, b) => getNumFrequence(b) - getNumFrequence(a) || b - a)
 
-    const maxes = Object.entries(frequences)
-        .filter(el => el[1] === max)
-        .sort((a, b) => b[0] - a[0])
-
-    return Number(maxes[0][0])
+    return sortedByFreq[0]
 }
 
 const chai = require("chai");
@@ -26,6 +23,10 @@ const assert = chai.assert;
 chai.config.truncateThreshold = 0;
 
 describe("Sample tests", function () {
+    it("should test", function () {
+        var arr = [12, 10, 8, 12, 7, 6, 4, 10, 12, 4, 4, 4];
+        assert.strictEqual(highestRank(arr), 4);
+    })
     it("should test", function () {
         var arr = [12, 10, 8, 12, 7, 6, 4, 10, 12];
         assert.strictEqual(highestRank(arr), 12);
