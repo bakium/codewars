@@ -22,8 +22,11 @@ Examples (input -> output:
  */
 
 const flip = (d, a) => {
-    //TODO
-    return
+    return a.sort((a, b) => {
+        if (d === 'R') return a - b
+        else if (d === 'L') return b - a
+        else return 0
+    })
 }
 
 // Since Node 10, we're using Mocha.
