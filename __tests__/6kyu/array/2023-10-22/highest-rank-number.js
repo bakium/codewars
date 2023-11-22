@@ -10,7 +10,15 @@ Examples
  */
 
 function highestRank(arr) {
-    //Your Code logic should written here
+    const frequences = arr.reduce((acc, el) => (acc[el] = 1 + (acc[el] | 0), acc), {})
+
+    const max = Math.max(...Object.values(frequences))
+
+    const maxes = Object.entries(frequences)
+        .filter(el => el[1] === max)
+        .sort((a, b) => b[0] - a[0])
+
+    return Number(maxes[0][0])
 }
 
 const chai = require("chai");
