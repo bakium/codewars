@@ -33,13 +33,13 @@ Enjoy it and happy coding!!
 
 function countSel(lst) {
 
-    const uniq = [...new Set(lst)]
+    const uniq = new Set(lst)
+    const onlyOnce = lst.filter(el => lst.indexOf(el) === lst.lastIndexOf(el))
 
     const occurences = lst.reduce((acc, el) => (acc[el] = 1 + (acc[el] | 0), acc), {})
 
     const occEntries = Object.entries(occurences)
     const occValues = Object.values(occurences)
-    const onlyOnce = occEntries.filter(el => el[1] === 1)
 
     const max = Math.max(...occValues)
     const maxCount = occEntries.filter(el => el[1] === max)
@@ -49,7 +49,7 @@ function countSel(lst) {
         .map(max => Number(max[0]))
         .sort((a, b) => a - b)
 
-    return [lst.length, uniq.length, onlyOnce.length, [maxesValues, max]]
+    return [lst.length, uniq.size, onlyOnce.length, [maxesValues, max]]
 }
 
 const { assert } = require('chai')
