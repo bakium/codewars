@@ -20,10 +20,18 @@ function duplicateCount(text) {
     //     }, {})
     // return Object.values(frequences).filter(el => el > 1).length
 
-    const duplicates = text.toLowerCase().split('')
-        .filter((el, _, arr) => arr.indexOf(el) !== arr.lastIndexOf(el))
+    // const duplicates = text.toLowerCase().split('')
+    //     .filter((el, _, arr) => arr.indexOf(el) !== arr.lastIndexOf(el))
 
-    return (new Set(duplicates)).size
+    // return (new Set(duplicates)).size
+
+    return text.toLowerCase().split('')
+        .filter((el, i, arr) => {
+            return arr.indexOf(el) !== arr.lastIndexOf(el) &&
+                arr.lastIndexOf(el) === i
+
+        }).length
+
 }
 
 const { assert } = require('chai');
