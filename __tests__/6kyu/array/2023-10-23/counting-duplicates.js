@@ -13,12 +13,17 @@ Example
  */
 
 function duplicateCount(text) {
-    const frequences = text.toLowerCase().split('')
-        .reduce((acc, current) => {
-            acc[current] = 1 + (acc[current]++ | 0)
-            return acc
-        }, {})
-    return Object.values(frequences).filter(el => el > 1).length
+    // const frequences = text.toLowerCase().split('')
+    //     .reduce((acc, current) => {
+    //         acc[current] = 1 + (acc[current]++ | 0)
+    //         return acc
+    //     }, {})
+    // return Object.values(frequences).filter(el => el > 1).length
+
+    const duplicates = text.toLowerCase().split('')
+        .filter((el, _, arr) => arr.indexOf(el) !== arr.lastIndexOf(el))
+
+    return (new Set(duplicates)).size
 }
 
 const { assert } = require('chai');
