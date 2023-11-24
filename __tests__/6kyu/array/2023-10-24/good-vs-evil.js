@@ -38,7 +38,18 @@ Output:
 Return "Battle Result: Good triumphs over Evil" if good wins, "Battle Result: Evil eradicates all trace of Good" if evil wins, or "Battle Result: No victor on this battle field" if it ends in a tie. */
 
 function goodVsEvil(good, evil) {
+    const goodWorth = [1, 2, 3, 3, 4, 10]
+    const evilWorth = [1, 2, 2, 2, 3, 5, 10]
 
+    const count = (arr, worth) => arr.split(' ')
+        .reduce((acc, el, i) => acc + Number(el) * worth[i], 0)
+
+    good = count(good, goodWorth)
+    evil = count(evil, evilWorth)
+
+    if (good > evil) return 'Battle Result: Good triumphs over Evil'
+    else if (good < evil) return 'Battle Result: Evil eradicates all trace of Good'
+    else return 'Battle Result: No victor on this battle field'
 }
 
 const { assert } = require("chai");
