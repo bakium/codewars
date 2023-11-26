@@ -20,9 +20,10 @@ I have also created other katas. Take a look if you enjoyed this kata!
  */
 
 function sortTwisted37(array) {
-    function sortTwisted37(array) {
-        return array;
+    function twist(num) {
+        return +num.toString().replace(/[3|7]/g, n => n === "3" ? "7" : "3")
     }
+    return [...array].sort((a, b) => twist(a) - twist(b))
 }
 
 
