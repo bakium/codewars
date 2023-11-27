@@ -10,7 +10,8 @@ Examples
  */
 
 function sortArray(array) {
-    // Return a sorted array.
+    const oddNumbers = array.filter(n => n % 2).sort((a, b) => a - b)
+    return array.map(el => el % 2 ? oddNumbers.shift() : el)
 }
 
 const chai = require("chai");
