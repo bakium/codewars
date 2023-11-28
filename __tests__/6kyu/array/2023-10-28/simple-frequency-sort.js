@@ -12,7 +12,8 @@ Please also try Simple time difference
  */
 
 function solve(arr) {
-    //..
+    // working with a copy of the array is required in order to pass on codewars site
+    return [...arr].sort((a, b) => arr.filter(y => y === b).length - arr.filter(x => x === a).length || a - b)
 }
 
 const { assert } = require('chai')
