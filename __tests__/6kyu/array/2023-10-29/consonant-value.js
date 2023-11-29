@@ -23,11 +23,10 @@ Vowel-consonant lexicon
 
 function solve(s) {
     const values = s.slice()
-        .replace(/[aeiou]/g, "_")
-        .replace(/_+/g, "_")
-        .split('_')
+        .split(/[aeiou]+/)
         .map(
-            letters => [...letters].reduce((acc, letter) => acc + letter.charCodeAt(0) - 96, 0)
+            group => [...group].reduce((acc, letter) =>
+                acc + letter.charCodeAt(0) - 96, 0)
         )
 
     return Math.max(...values)
