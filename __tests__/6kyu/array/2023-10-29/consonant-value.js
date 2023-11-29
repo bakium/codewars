@@ -22,7 +22,15 @@ Vowel-consonant lexicon
  */
 
 function solve(s) {
-    return 0;
+    const values = s.slice()
+        .replace(/[aeiou]/g, "_")
+        .replace(/_+/g, "_")
+        .split('_')
+        .map(
+            letters => [...letters].reduce((acc, letter) => acc + letter.charCodeAt(0) - 96, 0)
+        )
+
+    return Math.max(...values)
 };
 
 const chai = require("chai");
