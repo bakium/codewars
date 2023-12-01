@@ -6,7 +6,11 @@ Return the resulting array.
  */
 
 function isVow(a) {
-
+    return a.map(charCode => {
+        return 'aeiou'.includes((letter = String.fromCharCode(charCode)))
+            ? letter
+            : charCode
+    })
 }
 
 const { assert } = require('chai')
