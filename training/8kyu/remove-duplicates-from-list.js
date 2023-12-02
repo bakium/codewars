@@ -4,7 +4,8 @@ The order of the sequence has to stay the same.
  */
 
 function distinct(a) {
-    return [];
+    // return a.filter((el, i) => i === a.indexOf(el))
+    return [...new Set(a)]
 }
 
 const chai = require("chai");
