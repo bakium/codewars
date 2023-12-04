@@ -9,7 +9,19 @@ For input [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, -11, -12, -13, -14, -15], you should r
  */
 
 function countPositivesSumNegatives(input) {
-    // your code here
+    // const positiveCount = input.filter(el => el > 0).length
+    // const negativeSum = input.reduce((acc, el) => el < 0 ? acc + el : acc, 0)
+    // return [positiveCount, negativeSum]
+
+    let positiveCount = 0
+    let negativeSum = 0
+
+    input.forEach(element => {
+        if (element > 0) positiveCount++
+        if (element < 0) negativeSum += element
+    });
+
+    return [positiveCount, negativeSum]
 }
 
 const chai = require("chai");
