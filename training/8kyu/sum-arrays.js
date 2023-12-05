@@ -25,6 +25,7 @@ Advanced users may find this extremely easy and can easily write this in one lin
 function sum(numbers) {
     "use strict";
 
+    return numbers.reduce((total, element) => total + +element, 0)
 };
 
 const { assert } = require('chai')
