@@ -16,7 +16,15 @@ duck_duck_goose([$a, $b, $c, $d], 4); // => $d["name"]
  */
 
 function duckDuckGoose(players, goose) {
-    // ...
+    // // here we reduce the goose by players.length each times
+    // while (goose > players.length) {
+    //     goose -= players.length
+    // }
+
+    // return players[goose - 1].name
+
+    const calculatedIndex = (goose - 1) % players.length
+    return players[calculatedIndex].name
 }
 
 const { assert } = require('chai');
