@@ -10,8 +10,14 @@ first(arr, 3) //=> ['a', 'b', 'c'];
 first(arr, 0) //=> [];
  */
 
-function first(arr, n) {
-    // return arr;
+// function first(arr, n) {
+//     return arr.slice(0, n || 1)
+//     // passed but not very explicit
+//     // better to add a default parameter
+// }
+
+function first(arr, n = 1) {
+    return arr.slice(0, n)
 }
 
 const { assert } = require('chai');
