@@ -4,7 +4,11 @@ Each number corresponds to their alphabetical order letter (e.g. 1 = A. 2 = B, e
  */
 
 function bingo(a) {
-    // your winning code here
+    // return 'BINGO'.split('').every(letter => a.includes(letter.charCodeAt() - 64))
+    // here we can avoid the split() by using [...'BINGO']
+    return [...'BINGO'].every(letter => a.includes(letter.charCodeAt() - 64))
+        ? 'WIN'
+        : 'LOSE'
 }
 
 const Test = require('@codewars/test-compat');
