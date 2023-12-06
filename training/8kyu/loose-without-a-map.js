@@ -6,7 +6,7 @@ For example:
  */
 
 function maps(x) {
-
+    return x.map(number => number * 2)
 }
 
 const chai = require("chai");
