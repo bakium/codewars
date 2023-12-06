@@ -87,7 +87,33 @@ sortIt([1,2,3,4,4,5,5,6,6]) should return [3,2,1,6,6,5,5,4,4]
  */
 
 function sortIt(arr) {
-    // coding here
+
+    /*
+
+    // with forEach()
+    const count1 = {}
+    arr.forEach(el => count1[el] = (count1[el] | 0) + 1)
+    return [...arr].sort((a, b) => count1[a] - count1[b] || b - a)
+
+
+    // with reduce(), be careful for the place of the default value!
+    // cause error if not in the root of the reduce() fn
+    const count2 = arr.reduce((acc, el) => {
+        acc[el] = (acc[el] || 0) + 1
+
+        // same without using 0 but 1 instead
+        acc[el] = (acc[el] + 1) || 1
+        return acc
+
+    }, {})
+
+    return [...arr].sort((a, b) => count2[a] - count2[b] || b - a)
+
+   */
+    // with filter()
+    return [...arr].sort((a, b) => {
+        return arr.filter(x => x === a).length - arr.filter(y => y === b).length || b - a
+    })
 }
 
 const chai = require("chai");
