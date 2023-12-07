@@ -18,7 +18,14 @@ Good luck!
  */
 
 function solve(arr) {
+    // best solution because give an unique result
+    return arr.find(el => !arr.includes(-el))
 
+    // good solution
+    // return arr.filter((a, _) => !arr.includes(-a))[0]
+
+    // Too complex solution
+    // return [...new Set(arr)].reduce((a, b) => a + b)
 }
 
 const { assert } = require('chai')
