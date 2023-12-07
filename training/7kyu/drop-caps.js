@@ -13,7 +13,9 @@ Note: you will be provided atleast one word and should take string as input and 
  */
 
 function dropCap(n) {
-
+    return n.split(" ")
+        .map(w => w.length > 2 ? w[0].toUpperCase() + w.slice(1).toLowerCase() : w)
+        .join(" ")
 }
 
 const chai = require("chai");
