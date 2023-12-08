@@ -18,6 +18,12 @@ because 8 is higher than the array's length.
 
 function getMean(arr, x, y) {
 
+  if (x < 2 || y < 2 || x > arr.length || y > arr.length) return -1
+
+  const beginMean = arr.slice(0, x).reduce((a, b) => a + b) / x
+  const endMean = arr.slice(-y).reduce((a, b) => a + b) / y
+
+  return (beginMean + endMean) / 2
 }
 
 const chai = require("chai");
