@@ -35,7 +35,14 @@ const scores = {
 }
 
 function boredom(staff) {
+    const total = Object.values(staff)
+        // not needed, the reduce can handle it
+        // .map(dpt => scores[dpt] || 0)
+        .reduce((acc, el) => acc + scores[el], 0)
 
+    if (total <= 80) return 'kill me now'
+    else if (total >= 100) return 'party time!!'
+    else return 'i can handle this'
 }
 
 const { assert } = require('chai')
