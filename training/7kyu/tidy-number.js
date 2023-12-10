@@ -54,7 +54,7 @@ Zizou
 const { assert } = require('chai')
 
 function tidyNumber(n) {
-  //your code here
+  return +[...String(n)].sort().join("") === n
 }
 
 describe("Basic tests", () => {
