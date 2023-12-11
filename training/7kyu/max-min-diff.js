@@ -13,7 +13,12 @@ Have fun!
  */
 
 function maxDiff(list) {
-    return 0;
+    // with max and min
+    return list.length >= 2 ? Math.max(...list) - Math.min(...list) : 0
+
+    // by sorting the list
+    // const sortedList = list.sort((a, b) => b - a)
+    // return (sortedList[0] - sortedList.slice(-1)) || 0
 };
 
 const chai = require("chai");
