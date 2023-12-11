@@ -8,7 +8,9 @@ Example (Input --> Output)
  */
 
 const capitals = function (word) {
-
+    return [...word].reduce((acc, letter, index) =>
+        (letter === letter.toUpperCase()) ? [...acc, index] : acc
+        , [])
 };
 
 const chai = require("chai");
