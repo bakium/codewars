@@ -48,7 +48,21 @@ const { log } = require('console')
 const { array } = require('yargs')
 
 const xMarksTheSpot = (input) => {
+  if (!input) return []
 
+  let res = []
+  let count = 0
+
+  input.forEach((subArr, xIndex) => {
+
+    if (subArr.includes('x')) {
+      count++
+      res[0] = xIndex
+      res[1] = subArr.findIndex(el => el === 'x')
+    }
+  })
+
+  return count >= 2 ? [] : res
 }
 
 const assert = require('chai').assert;
