@@ -19,7 +19,13 @@ A few things to note:
  */
 
 function transposeTwoStrings(array) {
-    return '';
+
+    const [word1, word2] = array
+    const maxlength = Math.max(word1.length, word2.length)
+
+    return Array.from({ length: maxlength },
+        (_, index) => `${word1[index] || " "} ${word2[index] || " "}`
+    ).join('\n')
 }
 
 const strictEqual = require('chai').assert.strictEqual;
