@@ -44,7 +44,17 @@ Algorithms
 Similar Kata: */
 
 function unflatten(flatArray) {
+  const result = []
 
+  while (flatArray.length) {
+    const toPush = flatArray[0] > 2
+      ? flatArray.splice(0, flatArray[0])
+      : flatArray.shift()
+
+    result.push(toPush)
+  }
+
+  return result
 }
 
 const { assert } = require('chai')
