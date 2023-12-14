@@ -11,7 +11,11 @@ If you've completed this one and you feel like testing your performance tuning o
  */
 
 function smaller(nums) {
-    //code me
+    return nums.map((num, i) => nums
+        .slice(i)
+        .filter(n => n < num)
+        .length
+    )
 }
 
 const chai = require("chai")
