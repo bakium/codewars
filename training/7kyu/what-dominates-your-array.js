@@ -7,7 +7,25 @@ Write a function dominator(arr) that, given a zero-indexed array arr consisting 
  */
 
 function dominator(arr) {
-    //code me
+
+    // With fitler but use more ressource and hacky with [0][0]
+    // const occurs = arr.map(el => arr.filter(n => n === el))
+    //     .sort((a, b) => b.length - a.length)
+
+    // return occurs[0].length > arr.length / 2
+    //     ? occurs[0][0]
+    //     : -1
+
+    const occurs = {}
+
+    for (let num of arr) {
+        // occurs[num] = (occurs[num] || 0) + 1
+
+        occurs[num] = ++occurs[num] || 1 // shortest but occurs[num]++ don't work !
+
+        if (occurs[num] > arr.length / 2) return num
+    }
+    return -1
 }
 
 const chai = require("chai");
