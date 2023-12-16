@@ -50,9 +50,8 @@ const characters = {
 }
 
 function getCharacters(obj, key, val) {
-    const foundCharacters = [];
-    // Insert fun here
-    return foundCharacters;
+    return obj.characters.filter((el) => el[key].toLowerCase() === val.toLowerCase())
+
 }
 
 const chai = require("chai")
