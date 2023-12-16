@@ -15,7 +15,7 @@ All of the strings in the array passed to your function will be different length
 
 
 function sortByLength(array) {
-    // Return an array containing the same strings, ordered from shortest to longest
+    return array.sort((a, b) => a.length - b.length)
 };
 
 const { assert } = require('chai')
