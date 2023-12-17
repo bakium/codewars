@@ -139,7 +139,16 @@ const GROUP2 = ['o', 'es', 'e', 'emos', 'éis', 'en']
 const GROUP3 = ['o', 'es', 'e', 'imos', 'ís', 'en']
 
 function conjugate(verb) {
-    return // Un objeto con el verbo conjugado :
+    const base = verb.slice(0, -2)
+    const suffix = verb.slice(-2)
+
+    const conjugations = {}
+
+    if (suffix === 'ar') conjugations[verb] = GROUP1.map(el => base + el)
+    if (suffix === 'er') conjugations[verb] = GROUP2.map(el => base + el)
+    if (suffix === 'ir') conjugations[verb] = GROUP3.map(el => base + el)
+
+    return conjugations
 }
 
 const comer = {
