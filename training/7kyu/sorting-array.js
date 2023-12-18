@@ -19,7 +19,7 @@ Each element in the arrays will start with a unique letter so there will only be
  */
 
 function sortArray(a1, a2) {
-    return a2.map(a => a[0] === a1.find(el => el[0] === a[0]))
+    return a1.map(word => a2.find(w => w[0] === word[0]))
 }
 
 const chai = require("chai")
