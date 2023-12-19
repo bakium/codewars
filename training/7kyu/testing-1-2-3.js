@@ -14,7 +14,7 @@ Examples: (Input --> Output)
  */
 
 const number = function (array) {
-
+    return array.map((item, i) => `${i + 1}: ${item}`)
 }
 
 const chai = require("chai");
