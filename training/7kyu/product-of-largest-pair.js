@@ -12,7 +12,17 @@ maxProduct([33, 231, 454, 11, 9, 99, 57])   // 104874
  */
 
 function maxProduct(a) {
+    // With sort()
+    // a.sort((a, b) => b - a)
+    // return a[0] * a[1]
 
+    // with findIndex() and splice()
+    const removeMax = arr => {
+        const maxIndex = a.findIndex(item => item === Math.max(...a))
+        return a.splice(maxIndex, 1)
+    }
+
+    return removeMax(a) * removeMax(a)
 }
 
 const { assert } = require("chai")
