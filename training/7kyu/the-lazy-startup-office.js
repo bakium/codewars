@@ -32,6 +32,36 @@ As an output you would expect in this case:
 
 function binRota(arr) {
 
+    /* map shortest solution */
+    return arr
+        .map((subArr, i) => i % 2 ? subArr.reverse() : subArr)
+        .flat()
+
+    /* manual flat for one level deep  for solution */
+    // let res = []
+
+    // for (let i = 0; i < arr.length; i++) {
+    //     if (i % 2) res.push(...arr[i].reverse())
+    //     else res.push(...arr[i])
+    // }
+
+    // return res
+
+    /* forEach solution */
+    // let res = []
+
+    // arr.forEach((element, i) => {
+    //     i % 2 ? res.push(...element.reverse()) : res.push(...element)
+    // });
+
+    // return res
+
+    /* reduce solution */
+    // return arr.reduce((acc, subArr, i) => {
+    //     return (i % 2) ? acc.concat(subArr.reverse()) : acc.concat(subArr)
+    // // with no default value, the initial value will be arr[0]
+    // // witch is ok in our case
+    // })
 }
 
 const { assert } = require('chai')
