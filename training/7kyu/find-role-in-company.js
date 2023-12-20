@@ -29,7 +29,10 @@ function findEmployeesRole(name) {
         { firstName: 'Colin', lastName: 'Brown', role: 'Trainee' }
     ]
 
-    return;// Passed employees role
+    const employee = employees
+        .find(({ firstName, lastName }) => name === `${firstName} ${lastName}`)
+
+    return employee ? employee.role : "Does not work here!"
 }
 
 const { assert } = require('chai')
