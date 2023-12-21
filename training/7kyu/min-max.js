@@ -14,7 +14,13 @@ Good luck!
  */
 
 function solve(arr) {
-    //..
+    arr.sort((a, b) => a - b)
+    const res = []
+    while (arr.length > 0) {
+        res.push(arr.pop())
+        if (arr.length) res.push(arr.shift())
+    }
+    return res
 }
 
 
