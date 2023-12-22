@@ -14,7 +14,29 @@ Assume all inputs are valid lists with at least one value. For the purpose of si
  */
 
 function listToArray(list) {
-    //write your code here
+
+    // while version
+    // let res = []
+
+    // while (list) {
+    //     res.push(list.value)
+    //     list = list.next
+    // }
+
+    // return res
+
+
+
+    // do while version
+    let res = []
+    do {
+        res.push(list.value)
+        list = list.next
+    }
+    while (list)
+
+    return res
+
 }
 
 const { assert } = require('chai')
