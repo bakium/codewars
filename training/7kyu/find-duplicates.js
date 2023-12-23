@@ -11,7 +11,11 @@ Examples
  */
 
 function duplicates(arr) {
-    //TODO: return the array of duplicates from arr
+    // filters the 2nd, 3rd, etc... occurences of a duplicate element in order
+    const dups = arr.filter((item, i) => arr.indexOf(item) !== i)
+
+    // removes duplicates
+    return [...new Set(dups)]
 }
 
 const { assert } = require('chai');
