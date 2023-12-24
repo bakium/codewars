@@ -26,7 +26,7 @@ const Dislike = 'Dislike'
 const Nothing = 'Nothing'
 
 function likeOrDislike(buttons) {
-    return Like || Dislike || Nothing;
+    return buttons.reduce((previous, current) => previous === current ? Nothing : current, Nothing)
 }
 
 const { assert } = require("chai");
