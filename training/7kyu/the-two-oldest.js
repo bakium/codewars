@@ -14,7 +14,7 @@ For example (Input --> Output):
 
 // return the two oldest/oldest ages within the array of ages passed in.
 function twoOldestAges(ages) {
-    return []
+    return ages.sort((a, b) => a - b).slice(-2)
 }
 
 const { assert } = require("chai")
