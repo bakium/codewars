@@ -18,8 +18,11 @@ http://stackoverflow.com/questions/6093874/why-doesnt-the-sort-function-of-javas
 "use strict";
 
 function flattenAndSort(array) {
-    // Good luck, brave code warrior!
-    return array;
+    // without flat
+    // return array.reduce((acc, el) => [...acc, ...el], []).sort((a, b) => a - b)
+
+    // with flat
+    return array.flat().sort((a, b) => a - b)
 }
 
 const chai = require("chai");
