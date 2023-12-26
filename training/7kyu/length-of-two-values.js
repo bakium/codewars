@@ -11,7 +11,10 @@ Good luck!
  */
 
 function alternate(n, firstValue, secondValue) {
-    // your code
+    return Array.from(
+        { length: n },
+        (_, i) => i % 2 ? secondValue : firstValue
+    )
 }
 
 const chai = require("chai");
