@@ -47,7 +47,8 @@ Explanation:
  */
 
 function productArray(numbers) {
-    //your code here
+    const sum = numbers.reduce((a, b) => a * b)
+    return numbers.map(n => sum / n)
 }
 
 const { assert } = require('chai')
