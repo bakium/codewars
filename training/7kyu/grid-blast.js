@@ -29,8 +29,10 @@ const grid = ['top left', 'top middle', 'top right',
     'middle left', 'center', 'middle right',
     'bottom left', 'bottom middle', 'bottom right']
 
+const LINE_SIZE = 3
+
 function fire(x, y) {
-    // YOUR CODE HERE.
+    return grid[(y * LINE_SIZE) + x]
 }
 
 const { assert } = require('chai')
