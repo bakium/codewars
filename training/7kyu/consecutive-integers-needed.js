@@ -4,7 +4,11 @@ For example:
 If arr contains [4, 8, 6] then the output should be 2 because two numbers need to be added to the array (5 and 7) to make it a consecutive array of numbers from 4 to 8. Numbers in arr will be unique. */
 
 function consecutive(arr) {
+    // short circuit evaluation
+    return Math.max(...arr) - Math.min(...arr) - arr.length + 1 | 0
 
+    // ternary (longer)
+    // return arr.length < 2 ? 0 : Math.max(...arr) - Math.min(...arr) - arr.length + 1
 }
 
 const { assert } = require('chai')
