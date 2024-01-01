@@ -10,7 +10,7 @@ Examples
  */
 
 function checkThreeAndTwo(array) {
-    //your code here
+    return [...'abc'].map(c => array.filter(x => x == c).length).sort() == '0,2,3'
 }
 
 const { assert } = require('chai')
