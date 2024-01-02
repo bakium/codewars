@@ -67,7 +67,21 @@ Zizou
  */
 
 function arrayLeaders(numbers) {
-    return []
+    // ReduceRight
+    let res = []
+    numbers.reduceRight((acc, item) => {
+        if (item > acc) res.push(item)
+        return acc + item
+    }, 0)
+    return res.reverse()
+
+    // Double reduce
+    // return numbers.reduce((acc, num, i) => {
+    //     const rightSum = numbers.slice(i + 1).reduce((a, b) => a + b, 0)
+
+    //     if (num > rightSum) acc.push(num)
+    //     return acc
+    // }, [])
 }
 
 const { assert } = require("chai");
