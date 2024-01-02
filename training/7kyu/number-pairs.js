@@ -12,7 +12,10 @@ getLargerNumbers(arr1, arr2); // Returns [23, 64, 53, 17, 88]
  */
 
 function getLargerNumbers(a, b) {
-    return []
+    // return a.map((item, i) => item >= b[i] ? item : b[i])
+
+    // Math.max()
+    return a.map((el, i) => Math.max(el, b[i]))
 }
 
 const { assert } = require('chai')
