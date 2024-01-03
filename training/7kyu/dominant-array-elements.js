@@ -11,7 +11,9 @@ Good luck!
  */
 
 function solve(arr) {
-    return []
+    // No need to a reduceRight because we don't need to
+    // sum the right elements, a filter with Math.max() is enought
+    return arr.filter((el, i) => el > Math.max(...arr.slice(i + 1)))
 };
 
 const { assert } = require('chai')
