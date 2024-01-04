@@ -17,7 +17,7 @@ Return the resulting array.
  */
 
 function trouble(x, t) {
-
+    return x.reduce((acc, current) => acc.at(-1) + current === t ? acc : [...acc, current], [])
 }
 
 const { assert } = require('chai')
