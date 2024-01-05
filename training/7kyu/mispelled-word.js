@@ -17,6 +17,16 @@ In the tests that expect true, the mispelled word will always differ mostly by o
 
 const mispelled = function (word1, word2) {
 
+    // good solution
+    return word1.slice(1) === word2
+        || word2.slice(1) === word1
+        || [...word1].filter((letter, i) => letter !== word2[i]).length <= 1
+    // global comparaison (less precise than what the statement tell us to do)
+    // if (word1.length >= word2.length) {
+    //     return [...word1].filter(letter => !word2.includes(letter)).length <= 1
+    // } else {
+    //     return [...word2].filter(letter => !word1.includes(letter)).length <= 1
+    // }
 }
 
 const chai = require("chai");
