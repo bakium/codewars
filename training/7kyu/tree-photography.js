@@ -27,8 +27,14 @@ There will always be a best side.
  */
 
 function treePhotography(trees) {
-    // Do your stuff
-    return "left" || "right"
+    const reduceFn = (acc, current) => current > (acc.at(-1) | 0)
+        ? (acc.push(current), acc) // or [...acc, current]
+        : acc
+
+    const { length: leftCount } = trees.reduce(reduceFn, [])
+    const { length: rightCount } = trees.reduceRight(reduceFn, [])
+
+    return leftCount > rightCount ? 'left' : 'right'
 }
 
 const chai = require("chai");
