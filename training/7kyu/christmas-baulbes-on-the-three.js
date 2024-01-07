@@ -18,6 +18,25 @@ Good luck - I think your granny may have some minced pies for you if you do a go
  */
 
 function baublesOnTree(baubles, branches) {
+
+
+    // shorter solution
+    // here we decrement the divider by one each time
+    // and we get the ceill value
+    // the abs avoid us to get -0 instead of 0
+    return branches
+        ? Array.from({ length: branches }, () => Math.abs(Math.ceil(baubles-- / branches)))
+        : "Grandma, we will have to buy a Christmas tree first!"
+
+    // first custom solution
+    // const repartition = Array.from({ length: branches }, (el, i) => {
+    //     return i < (Math.floor(baubles / branches))
+    //         ? Math.ceil(baubles / branches)
+    //         : Math.floor(baubles / branches)
+    // })
+    // return branches
+    //     ? repartition
+    //     : "Grandma, we will have to buy a Christmas tree first!"
 }
 
 const { assert } = require('chai')
