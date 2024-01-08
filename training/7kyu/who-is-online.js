@@ -45,7 +45,36 @@ Finally, if you have no friends in your chat application, the input will be an e
  */
 
 const whosOnline = (friends) => {
-    // Your code here...
+
+    const res = {}
+
+    // factorisation
+    friends.forEach(friend => {
+        const userStatus = friend.status === 'online' && friend.lastActivity > 10
+            ? 'away'
+            : friend.status
+
+        res[userStatus]
+            ? res[userStatus].push(friend.username)
+            : res[userStatus] = [friend.username]
+    })
+
+    // Manual conditions (First iteration)
+    // friends.forEach(friend => {
+    //     if (friend.status === "offline") {
+    //         res.offline ? res.offline.push(friend.username) : res.offline = [friend.username]
+    //     }
+    //     if (friend.status === "online") {
+    //         if (friend.lastActivity <= 10) {
+    //             res.online ? res.online.push(friend.username) : res.online = [friend.username]
+    //         }
+    //         else {
+    //             res.away ? res.away.push(friend.username) : res.away = [friend.username]
+    //         }
+    //     }
+    // })
+
+    return res
 }
 
 const { assert } = require('chai')
