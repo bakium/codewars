@@ -24,8 +24,9 @@ counterEffect("0000") // [[0],[0],[0],[0]]
  */
 
 function counterEffect(hitCount) {
-
+    return [...hitCount].map(el => [...Array(+el + 1).keys()])
 }
+
 const { assert } = require('chai')
 
 describe("Tests", () => {
