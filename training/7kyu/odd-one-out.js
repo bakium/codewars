@@ -26,7 +26,20 @@ Are you up to the challenge?
 
 
 function oddOnesOut(nums) {
-    // your code here
+
+    // double filter shorter solution
+    return nums.filter(num => nums.filter(n => n === num).length % 2 === 0)
+
+    // reduce solution
+    const frequences = nums.reduce((acc, num) => {
+        acc[num] = acc[num] ? ++acc[num] : 1 // acc[num]++ don't work
+        // acc[num] = (acc[num] | 0) + 1 // shorter
+        return acc
+    }, {})
+
+    return nums.filter(n => frequences[n] % 2 === 0)
+
+
 }
 
 const { assert } = require('chai');
