@@ -12,7 +12,8 @@ The first array will always have at least one element.
  */
 
 function findMissing(arr1, arr2) {
-    // Your solution here
+    const reduceFn = (sign) = (a, b) => a + b
+    return arr1.reduce(reduceFn, 0) - arr2.reduce(reduceFn, 0)
 }
 
 const { assert } = require('chai')
