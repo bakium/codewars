@@ -19,8 +19,8 @@ SPECIAL THANKS: @JulianKolbe !
  */
 
 function hotSingles(arr1, arr2) {
-    //WRITE YOUR CODE HERE!! GOOD LUCK
-    return [];
+    const mergedArray = [...new Set([...arr1, ...arr2])]
+    return mergedArray.filter(item => !arr1.includes(item) || !arr2.includes(item))
 }
 
 describe("Hot singles", function () {
