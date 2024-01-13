@@ -8,7 +8,14 @@ For Example: factors(54) should return [54, 27, 18, 9, 6, 3, 2, 1]
  */
 
 function factors(x) {
+    // more explicit method with external if
+    if (x < 0 || !Number.isInteger(x)) return -1
+    return [...Array(x + 1).keys()].filter(n => x % n === 0).reverse()
 
+    // ternary method
+    // return (x > 0 && Number.isInteger(x))
+    //     ? [...Array(x + 1).keys()].filter(n => x % n === 0).reverse()
+    //     : -1
 }
 
 const { assert } = require('chai')
