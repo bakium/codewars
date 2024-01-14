@@ -14,7 +14,19 @@ The combine function should be a good citizen, so should not mutate the input ob
  */
 
 function combine(...objs) {
-    return objs
+
+    // reduce + forEach
+    return objs.reduce((obj, item) => {
+        Object.entries(item).forEach(([key, value]) => obj[key] = (obj[key] | 0) + value)
+        return obj
+    }, {})
+
+    // map + flat + reduce solution
+    // const objsEntries = objs.map(o => Object.entries(o)).flat()
+    // return objsEntries.reduce((obj, [key, value]) => {
+    //     obj[key] = (obj[key] | 0) + value
+    //     return obj
+    // }, {})
 }
 
 const objA = { a: 10, b: 20, c: 30 }
