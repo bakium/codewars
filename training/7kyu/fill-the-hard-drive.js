@@ -25,7 +25,29 @@ Do not expect any negative or invalid inputs.
  */
 
 function save(sizes, hd) {
+    // while shorter method (with hd value decrement)
+    let count = 0
+    let firstItem = 0
+    while (hd >= 0) {
+        firstItem = sizes.shift()
+        hd -= firstItem
+        count++
+    }
 
+    return count - 1
+
+
+    // while simple method (by array key assignation)
+    // const res = []
+    // let total = 0
+    // let i = 0
+
+    // while (total <= hd) {
+    //     total += sizes[i]
+    //     res.push(sizes[i])
+    //     i++
+    // }
+    // return res.length - 1
 }
 
 const { assert } = require("chai");
