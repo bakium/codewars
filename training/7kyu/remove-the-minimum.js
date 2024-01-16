@@ -18,7 +18,17 @@ Examples
  */
 
 function removeSmallest(numbers) {
-    return [];
+    // filter solution (no need <= 1 condition because array is empty with filter on one element)
+    const minIndex = numbers.indexOf(Math.min(...numbers))
+    return [...numbers].filter((_, i) => i !== minIndex)
+
+    // splice solution
+    // if (numbers.length <= 1) return []
+
+    // const copy = [...numbers]
+    // copy.splice(numbers.indexOf(Math.min(...numbers)), 1)
+    // return copy
+
 }
 
 const chai = require("chai");
