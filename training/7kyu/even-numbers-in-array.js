@@ -11,7 +11,25 @@ For example:
  */
 
 function evenNumbers(array, number) {
-    // good luck
+    // filter optimized solution
+    // filter will always return false when count++ > number
+    // so no processing will be made after that
+    let count = 0
+    return array
+        .reverse()
+        .filter((item, i) => item % 2 === 0 && count++ < number)
+        .reverse()
+
+    // while optimised solution
+    // let i = array.length
+    // const res = []
+    // while (res.length <= number && i >= 0) {
+    //     if (array[i] % 2 === 0) res.push(array[i])
+    //     i--
+    // }
+    // res.reverse()
+
+    // return res.length > number ? res.slice(1) : res
 }
 
 const { assert } = require('chai')
