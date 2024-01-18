@@ -24,8 +24,8 @@ Notes
  */
 
 function spinAround(turns) {
-    // Here be dragons!
-    return 0;
+    const circlePercent = turns.reduce((acc, direction) => direction === 'right' ? acc + 0.25 : acc - 0.25, 0)
+    return Math.floor(Math.abs(circlePercent))
 }
 
 const chai = require("chai");
