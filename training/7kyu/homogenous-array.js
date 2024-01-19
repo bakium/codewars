@@ -18,8 +18,9 @@ No implicit type casting is allowed. A subarray [1, '2'] would be considered ill
  */
 
 function filterHomogenous(arrays) {
-    // Alea iacta est, code legionary!
-    return arrays;
+    return arrays.filter(
+        arr => arr.length > 0 && arr.every(el => typeof el === typeof arr[0])
+    )
 }
 
 const { assert } = require('chai')
