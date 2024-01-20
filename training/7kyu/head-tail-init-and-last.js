@@ -31,6 +31,11 @@ Most tests consist of 100 randomly generated arrays, each with four tests, one f
  */
 
 
+const head = arr => arr.at(0)
+const tail = arr => arr.slice(1)
+const init = arr => arr.slice(0, -1)
+const last = arr => arr.at(-1)
+
 const chai = require('chai');
 const assert = chai.assert;
 chai.config.truncateThreshold = 0;
