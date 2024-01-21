@@ -11,7 +11,7 @@ If an object is missing the property, you should just leave it as undefined/None
  */
 
 function pluck(objs, name) {
-
+    return objs.map(obj => obj[name])
 }
 
 const { assert } = require('chai')
