@@ -18,6 +18,13 @@ If the sum of the three parameters (as described above) is > 22, return 'Sabbati
 */
 
 function sabb(s, val, happiness) {
+    const letterCount = [...s.toLowerCase()]
+        .filter(letter => 'sabbatical'.includes(letter))
+        .length
+
+    return (letterCount + val + happiness > 22)
+        ? 'Sabbatical! Boom!'
+        : 'Back to your desk, boy.'
 }
 
 const chai = require("chai");
