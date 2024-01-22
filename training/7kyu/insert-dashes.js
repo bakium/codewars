@@ -6,7 +6,10 @@ Note that the number will always be non-negative (>= 0).
  */
 
 function insertDash(num) {
-    //code me
+    return [...String(num)].reduce((acc, current) => (acc.at(-1) % 2) && (current % 2)
+        ? acc + "-" + current
+        : acc + current
+    )
 }
 
 const chai = require("chai");
