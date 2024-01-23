@@ -8,7 +8,7 @@ All inputs will be valid.
 */
 
 function last(x) {
-
+    return x.split(" ").sort((a, b) => a.at(-1).localeCompare(b.at(-1)))
 }
 
 const chai = require("chai");
