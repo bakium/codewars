@@ -15,7 +15,7 @@ ENJOY CODING :)
  */
 
 function sumOfMinimums(arr) {
-    // your code here
+    return arr.reduce((acc, subArr) => acc + Math.min(...subArr), 0)
 }
 
 const { assert } = require('chai')
