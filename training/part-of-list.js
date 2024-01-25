@@ -27,7 +27,23 @@ You can see other examples for each language in "Your test cases"
  */
 
 function partlist(arr) {
-    // your code
+
+    // map shorter method
+    return arr
+        .map((_, i) => [
+            arr.slice(0, i).join(" "),
+            arr.slice(i, arr.length).join(" ")
+        ])
+        .slice(1)
+
+    // for loop method
+    // let all = []
+    // for (let i = 1; i < arr.length; i++) {
+    //     let res = [arr.slice(0, i).join(" "), arr.slice(i, arr.length).join(" ")]
+    //     all.push(res)
+    // }
+
+    // return all
 }
 
 const { assert, config } = require('chai')
