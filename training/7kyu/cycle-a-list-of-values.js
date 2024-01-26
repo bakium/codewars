@@ -32,7 +32,19 @@ cycle(1, [1,2,2,3], 2) // => 2
  */
 
 function cycle(dir, arr, cur) {
-    // Implement me
+    const curIndex = arr.findIndex(el => el === cur)
+
+    // shorter solution
+    let newIndex = (curIndex + dir + arr.length) % arr.length
+    return arr[newIndex] || null
+
+    // first solution
+    // let newIndex = curIndex + dir
+    // newIndex = newIndex >= arr.length || newIndex < 0
+    //     ? (newIndex + arr.length) % arr.length
+    //     : newIndex
+
+    // return arr[newIndex] || null
 }
 
 const chai = require('chai');
