@@ -49,9 +49,24 @@ List of all my katas
  */
 
 function pattern(n) {
-    var output = [];
-    // Happy Coding ^_^
-    return output;
+    let output = "";
+
+    for (let i = n; i > 0; i--) {
+        for (let j = n; j > 0; j--) {
+            (i > j)
+                ? output += String(i).at(-1) // or Math.max(i, j) % 10
+                : output += String(j).at(-1)
+        }
+        output += '\n'
+    }
+    return output.slice(0, -1)
+
+    // flatMap longer less efficient solution
+    //    return Array.from({ length: n }, (_, i) =>
+    //         Array.from({ length: n }, (_, j) =>
+    //             (n - Math.min(i, j)) % 10
+    //         ))
+    //        .flatMap(n => n.join("")).join("\n")
 }
 
 const chai = require('chai');
