@@ -12,7 +12,7 @@ const chai = require('chai')
 const { assert } = chai
 
 function findDup(arr) {
-    return
+    return arr.filter((item, i) => arr.lastIndexOf(item) !== i)[0]
 }
 
 describe("Tests", () => {
