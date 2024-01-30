@@ -16,8 +16,25 @@ The input to your function will always be valid for this kata.
  * Returns a [parts]-length array of equal or nearly equal
  * integers that add up to [num].
  */
+
 const splitInteger = function (num, parts) {
-    return []
+    // shortest solution
+    return Array.from({ length: parts }, (_, i) => Math.ceil(num-- / parts))
+
+    // map long solution
+    // return Array.from({ length: parts }, (_, i) => {
+    //     const res = Math.ceil(num / parts)
+    //     num--
+    //     return res
+    // })
+
+    // for long solution
+    // let res = []
+    // for (let i = 0; i < parts; i++) {
+    //     res.push(Math.ceil(num / parts))
+    //     num--
+    // }
+    // return res
 }
 
 const chai = require('chai')
