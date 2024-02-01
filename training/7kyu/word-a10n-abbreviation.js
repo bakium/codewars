@@ -23,7 +23,7 @@ abbreviate("elephant-rides are really fun!")
  */
 
 function abbreviate(string) {
-    // ...
+    return string.replace(/\w{4,}/g, word => word.at(0) + String(word.length - 2) + word.at(-1))
 }
 
 const chai = require('chai')
