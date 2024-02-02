@@ -33,7 +33,12 @@ Remarks
 If a or b are nil (or null or None, depending on the language), the problem doesn't make sense so return false.
  */
 function comp(array1, array2) {
-    //your code here
+    if (!array1?.length || !array2?.length) return false
+    const sortFn = (a, b) => a - b
+
+    array1.sort(sortFn)
+    array2.sort(sortFn)
+    return array1.every((item, i) => item * item === array2[i])
 }
 
 const { assert } = require('chai');
