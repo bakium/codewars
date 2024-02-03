@@ -20,9 +20,27 @@ The problem involves some pretty big random numbers. So try to optimize your cod
 Good luck!
  */
 
+
 function abundant(h) {
-    //your code here
-    return [[]];
+    // for solution with double loop and without array
+    for (h; h > 0; h--) {
+        let sum = 0
+        for (let i = 0; i < h; i++) {
+            if (!(h % i)) sum += i
+            if (sum > h) return [[h], [sum - h]]
+        }
+    }
+
+    // while solution with array and reduce
+    while (h > 0) {
+        const greaterAbundantNumber = [...Array(h).keys()]
+            .reduce((acc, item) => (h % item === 0) ? acc + item : acc, 0)
+        if (greaterAbundantNumber > h) {
+            return res = [[h], [greaterAbundantNumber - h]]
+        }
+        h--
+    }
+
 }
 
 const { assert } = require('chai')
