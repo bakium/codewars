@@ -11,6 +11,10 @@ Good luck!
  */
 
 function common(a, b, c) {
+    return a.reduce((acc, current) =>
+        b.includes(current) && c.includes(current)
+            ? acc + current
+            : acc, 0)
 }
 
 const { assert } = require('chai')
