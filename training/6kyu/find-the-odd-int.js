@@ -11,8 +11,17 @@ Examples
  */
 
 function findOdd(A) {
-    //happy coding!
-    return 0;
+    // filter solution
+    return A.find(item => A.filter(a => a === item).length % 2)
+    // return A.filter(item => A.filter(a => a === item).length % 2)[0] // double filter, [0] not very pleasant
+
+    // reduce more complex solution
+    // const occurences = A.reduce((acc, item) => {
+    //     acc[item] = (acc[item] | 0) + 1
+    //     return acc
+    // }, {})
+
+    return Number(Object.entries(occurences).filter(occ => occ[1] % 2)[0][0])
 }
 
 const assert = require('chai').assert;
