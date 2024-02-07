@@ -15,7 +15,13 @@ firstNSmallest([1,2,3,-4,0],3) === [1,-4,0]
 firstNSmallest([1,2,3,4,5],0) === []
  */
 function firstNSmallest(array, n) {
-    //your code here
+    if (n == 0 || n > array) return []
+
+    while (array.length > n) {
+        const maxIndex = array.lastIndexOf(Math.max(...array))
+        array.splice(maxIndex, 1)
+    }
+    return array
 }
 
 const { assert } = require('chai')
