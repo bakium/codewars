@@ -18,7 +18,10 @@ Any input that is NOT a letter should be treated as if it is not there. For exam
  */
 
 function autocomplete(input, dictionary) {
-
+    sanitizeInput = input.toLowerCase().replace(/[^A-Za-z]/g, "")
+    return dictionary
+        .filter(word => word.toLowerCase().startsWith(sanitizeInput))
+        .slice(0, 5)
 }
 
 const chai = require("chai");
