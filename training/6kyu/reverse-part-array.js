@@ -19,7 +19,75 @@ Note : if the length argument exceeds the array length, reverse all of them, if 
  */
 
 function selReverse(array, length) {
-    // TODO
+
+    // Recursion with ternary operator
+    return array.length * length
+        ? [
+            ...array.slice(0, length).reverse(),
+            ...selReverse(array.slice(length), length)
+        ]
+        : array
+
+    // // Recursion
+    // if (array.length * length) { // to include if (length === 0)
+    //     return [
+    //         ...array.slice(0, length).reverse(),
+    //         ...selReverse(array.slice(length), length)
+    //     ]
+    // } else {
+    //     return array
+    // }
+
+    // // with spread operator
+    // if (length === 0) return array
+
+    // let finalArray2 = []
+    // while (array.length > 0) {
+    //     finalArray2 = [
+    //         ...finalArray2,
+    //         ...array.splice(0, length || array.length).reverse()
+    //     ]
+    // }
+
+    // return finalArray2
+
+    // // Shorter version (without map)
+    // if (length === 0) return array
+
+    // let finalArray = []
+    // while (array.length > 0) {
+    //     finalArray.push(array.splice(0, length || array.length).reverse())
+    // }
+
+    // return finalArray.flat()
+
+    // // Shorter version
+    // if (length === 0) return array
+
+    // let tmp = []
+    // while (array.length > 0) {
+    //     tmp.push(array.splice(0, length))
+    // }
+
+    // return tmp.map((a) => a.reverse()).flat()
+
+    // Long first version
+    // if (length === 0) return array
+
+    // let res = []
+    // let innerArray = []
+
+    // for (let i = 1; i < array.length + 1; i++) {
+    //     if (i % length === 0) {
+    //         innerArray.push(array[i - 1])
+    //         res.push(innerArray)
+    //         innerArray = []
+    //     } else {
+    //         innerArray.push(array[i - 1])
+    //     }
+    // }
+    // if (innerArray.length) res.push(innerArray)
+    // return res.map(a => a.reverse()).flat()
 }
 
 const { assert, config } = require('chai');
