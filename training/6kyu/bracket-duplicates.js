@@ -6,7 +6,7 @@ Please also ensure that the input is a string, and return "Please enter a valid 
  */
 
 function stringParse(string) {
-    //your code here
+    return string.replace(/([a-zA-Z])\1(\1+)/g, '$1$1[$2]')
 }
 
 const { chai, assert } = require('chai')
