@@ -11,7 +11,9 @@ alphabetized("The Holy Bible") // "BbeehHilloTy"
 
 
 function alphabetized(s) {
-
+    return [...s.replace(/[^a-zA-Z]/g, '')]
+        .sort((a, b) => a.localeCompare(b.toLowerCase()))
+        .join("")
 }
 
 const { assert } = require('chai')
